@@ -35,6 +35,32 @@ Add the following to your `C:\Users\ASN\.gemini\settings.json`:
 
 ---
 
+## 🎯 Sample Prompts for Deep Analysis
+
+To get the most out of these skills, use prompts that trigger deep architectural forensics. Here are some examples to get you started:
+
+### ☁️ Cloud Migration & Readiness
+*   *"Run a **Cloud Migration Maturity** review for 'Shopizer'. Focus on the 'Blockers' category for AWS and tell me which components are still using the local file system instead of S3."*
+*   *"I want to move 'LegacyApp' to the cloud. Analyze the outward dependencies and tell me if there are any hard connections to on-premise mainframe services."*
+
+### 🏗️ Modernization & Microservices
+*   *"Use the **Modernization Analysis** skill to analyze the 'OrderProcessing' transaction. Suggest a clean boundary for a new 'OrderService' microservice."*
+*   *"Find the top 5 most complex 'God Objects' in this monolith. Show me their inward call chains so I can see what breaks if I extract them."*
+
+### 🗄️ Database Migration
+*   *"We are migrating to PostgreSQL. Use the **Database Migration Advisor** to find every Stored Procedure in the 'Billing' module. Show me the code for the most complex one."*
+*   *"Analyze the 'CustomerData' table using a Data Graph. Which business transactions will be impacted if I change the 'customer_id' column?"*
+
+### 🛡️ Security & Risk Management
+*   *"Perform a **Security Vulnerability Check**. Search for fields named 'Password' or 'Secret' and use Pathfinder to see if they leak into raw API responses."*
+*   *"Find all internal objects in my application that are actually calling the vulnerable 'log4j' library so we can prioritize patching."*
+
+### ⚡ Performance & Structural Health
+*   *"The 'UserLogin' transaction is slow. Use the **Performance ISO-5055 Review** to check for inefficient database access patterns in that specific flow."*
+*   *"Analyze the 'MainCluster' of tables. Are there any circular dependencies that could cause deadlocks during high-volume updates?"*
+
+---
+
 ## 💻 How to Use in Gemini CLI
 
 ### **Installation**
