@@ -12,6 +12,18 @@ This skill uses tools provided by the CAST Imaging MCP server. Because users may
 - **The Agent MUST:** Search the available tools for those containing the keywords "imaging" and the base name.
 - **Prefix Handling:** Resolve the correct prefix (e.g., `mcp_imaging_linux_` or `your_server_name_`) by checking active MCP tools before execution.
 
+## 🛡️ Strict Guardrails & Hallucination Prevention
+... (existing guardrails) ...
+4.  **No Unverified Edits:** Any suggested code edits or remediations MUST directly address the specific file and line number identified by the `quality_insight_violations` or `object_details(focus="code")` tools. Do not suggest arbitrary code changes without structural proof.
+
+## 📂 Local Workspace Integration (Path Mapping)
+To provide real code insights, the Agent MUST map Imaging paths to the local workspace:
+1.  **Establish `local_root`:** Check if a path to the source code is known. If not, run `Glob **/*.java` (or relevant extension) to identify the project root.
+2.  **Translate Paths:** 
+    - Replace `§{main_sources}§/` with the `local_root`.
+    - Skip server-only paths (e.g., `§<LISA>§`).
+3.  **Verification:** Before reporting a code-level violation, use the `read_file` tool to fetch the actual code at the location returned by the MCP. Include a snippet of the REAL local code in your report.
+
 ## Workflow
 
 ### 1. Discover Cloud Advisors

@@ -11,6 +11,16 @@ Analyze application architecture using CAST Imaging.
 This skill uses tools from the CAST Imaging MCP server. Tool names are referenced by **base names**.
 - **The Agent MUST:** Resolve the correct prefix (e.g., `mcp_imaging_linux_` or `your_server_name_`) by checking active MCP tools before execution.
 
+## 🛡️ Strict Guardrails & Hallucination Prevention
+... (existing guardrails) ...
+4.  **No Unverified Edits:** Any suggested code edits or remediations MUST directly address the specific file and line number identified by the `quality_insight_violations` or `object_details(focus="code")` tools. Do not suggest arbitrary code changes without structural proof.
+
+## 📂 Local Workspace Integration (Path Mapping)
+To provide real code insights, the Agent MUST map Imaging paths to the local workspace:
+1.  **Establish `local_root`:** Identify the local project root by looking for build files (pom.xml, package.json, etc.).
+2.  **Translate Paths:** Replace `§{main_sources}§/` with your `local_root`.
+3.  **Verification:** When identifying a complexity hotspot, use `read_file` to inspect the actual class or method. Include REAL code snippets in your modernization suggestions.
+
 ## Workflow
 
 ### 1. Map High-Level Architecture

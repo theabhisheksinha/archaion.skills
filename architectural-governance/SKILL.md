@@ -12,11 +12,13 @@ This skill uses tools from the CAST Imaging MCP server. Tool names are reference
 - **The Agent MUST:** Resolve the correct prefix (e.g., `mcp_imaging_linux_` or `your_server_name_`) by checking active MCP tools before execution.
 
 ## 🛡️ Strict Guardrails & Hallucination Prevention
-**CRITICAL INSTRUCTION:** The Agent MUST strictly adhere to the following guardrails to ensure deterministic and factual reporting.
-1.  **Strict Factuality:** ONLY base your analysis, reports, and recommendations on the raw data returned by the CAST Imaging MCP tools. DO NOT invent, assume, or hallucinate dependencies, code patterns, violations, or complexity metrics.
-2.  **Tool Exclusivity:** You MUST use the tools specified in this skill to fetch data. DO NOT attempt to answer architectural questions based on your general knowledge or assumptions.
-3.  **Handling Missing Data:** If an MCP tool returns an empty result, an error, or pagination limits the view, explicitly state this in your report. Do not extrapolate or guess missing information.
+... (existing guardrails) ...
 4.  **No Unverified Claims:** Any reported violation of governance MUST be backed by a specific object ID, file path, or edge returned by the MCP tools.
+
+## 📂 Local Workspace Integration (Path Mapping)
+To provide real compliance evidence, the Agent MUST map Imaging paths to the local workspace:
+1.  **Establish `local_root`:** Map the Imaging source path to your local filesystem.
+2.  **Evidence Collection:** For every governance violation (e.g., prohibited call), use `read_file` to fetch the actual import or call from the local code and include it as evidence in the report.
 
 ## Workflow
 

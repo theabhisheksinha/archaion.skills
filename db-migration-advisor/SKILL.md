@@ -11,6 +11,15 @@ Guide database migrations using CAST Imaging.
 This skill uses tools from the CAST Imaging MCP server. Tool names are referenced by **base names**.
 - **The Agent MUST:** Resolve the correct prefix (e.g., `mcp_imaging_linux_` or `your_server_name_`) by checking active MCP tools before execution.
 
+## 🛡️ Strict Guardrails & Hallucination Prevention
+... (existing guardrails) ...
+4.  **No Unverified Edits:** Any suggested code edits or remediations MUST directly address the specific file and line number identified by the `quality_insight_violations` or `object_details(focus="code")` tools. Do not suggest arbitrary code changes without structural proof.
+
+## 📂 Local Workspace Integration (Path Mapping)
+To provide real database interaction insights, the Agent MUST map Imaging paths to the local workspace:
+1.  **Establish `local_root`:** Map the Imaging source path to your local filesystem.
+2.  **Verify SQL usage:** When Imaging flags "Hardcoded SQL", use `grep_search` in the local workspace to find the exact string and `read_file` to show the surrounding DAO context.
+
 ## Workflow
 
 ### 1. Explore Database Inventory
