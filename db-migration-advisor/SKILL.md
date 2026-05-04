@@ -33,3 +33,12 @@ This skill uses tools from the CAST Imaging MCP server. Tool names are reference
 
 ### 6. Generate Database Migration Report
 [Standard report structure follows...]
+
+## 💡 Example Prompts for Users
+- "We are moving to PostgreSQL. Find all Stored Procedures in the 'Billing' module of 'LegacyDB'."
+- "What happens to the business logic if I change the 'customer_id' column in the 'Orders' table?"
+- "Analyze the data access patterns of 'Shopizer' and tell me how much hardcoded SQL is present."
+
+## Tips for the Agent
+- Use `objects_relationships` to prove direct dependencies between code and tables.
+- If Stored Procedures exist, mark them as high-risk for migration.

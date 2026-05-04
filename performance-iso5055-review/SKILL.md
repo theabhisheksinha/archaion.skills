@@ -30,3 +30,12 @@ This skill uses tools from the CAST Imaging MCP server. Tool names are reference
 
 ### 5. Generate ISO-5055 Performance Report
 [Standard report structure follows...]
+
+## 💡 Example Prompts for Users
+- "The 'UserLogin' transaction is slow. Check 'Shopizer' for inefficient loops or database access patterns in that flow."
+- "Perform an ISO-5055 structural review of 'TicketMonster' and show me the top reliability risks."
+- "Are there any circular dependencies in the 'MainCluster' of tables that could cause deadlocks?"
+
+## Tips for the Agent
+- Use `stats` for a quick overview of object counts.
+- Focus on the 'Efficiency' characteristic for "Why is my app slow?" questions.

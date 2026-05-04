@@ -10,7 +10,7 @@ Assess the cloud readiness and migration maturity of an application using CAST I
 ## 🛠 Tool Resolution (MANDATORY)
 This skill uses tools provided by the CAST Imaging MCP server. Because users may rename their MCP server, the tool names in this workflow are referenced by their **base names** (e.g., `advisors`, `quality_insights`).
 - **The Agent MUST:** Search the available tools for those containing the keywords "imaging" and the base name.
-- **Prefix Handling:** If the tools are exposed as `my_server_advisors`, use that full name. If they are `mcp_imaging_linux_advisors`, use that.
+- **Prefix Handling:** Resolve the correct prefix (e.g., `mcp_imaging_linux_` or `your_server_name_`) by checking active MCP tools before execution.
 
 ## Workflow
 
@@ -34,4 +34,29 @@ This skill uses tools provided by the CAST Imaging MCP server. Because users may
 - Call the `transaction_details` tool (id="<id>", focus="summary").
 
 ### 6. Generate Cloud Maturity Report
-[Standard report structure follows...]
+
+Produce a report structured as follows:
+
+```markdown
+## Cloud Migration Maturity Report: [Application Name]
+
+### Executive Summary
+[Provide a high-level cloud readiness score (e.g., 0-100% or Low/Medium/High) and a summary of the migration effort.]
+
+### Critical Cloud Blockers
+| Rule | Description | Impacted Objects | Severity |
+|------|-------------|------------------|----------|
+| [Rule Name] | [Why it blocks cloud] | [Object names/counts] | Critical |
+
+### Recommended Migration Strategy
+[Choose one: Rehost (Lift & Shift), Replatform (Fix & Finish), or Refactor (Full Modernization).]
+```
+
+## 💡 Example Prompts for Users
+- "Isolate Cloud Blockers for 'Shopizer' and tell me which components still use the local file system."
+- "I want to move to the cloud. Analyze the outward dependencies of 'LegacyApp' for high-latency connections."
+- "What is the cloud readiness score for 'TicketMonster'?"
+
+## Tips for the Agent
+- Use `object_details(focus="code")` to see the actual code causing a cloud violation.
+- Group violations by component using `architectural_graph`.
