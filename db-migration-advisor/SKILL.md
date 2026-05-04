@@ -5,27 +5,31 @@ description: Guide database migration projects by analyzing how applications int
 
 # Database Migration Advisor
 
-This skill identifies "gravity" in the database layer and helps developers understand the impact of schema changes on application code.
+Guide database migrations using CAST Imaging.
+
+## 🛠 Tool Resolution (MANDATORY)
+This skill uses tools from the CAST Imaging MCP server. Tool names are referenced by **base names**.
+- **The Agent MUST:** Resolve the correct prefix (e.g., `mcp_imaging_linux_` or `your_server_name_`) by checking active MCP tools before execution.
 
 ## Workflow
 
 ### 1. Explore Database Inventory
-- Call `mcp_imaging_linux_application_database_explorer(application="<app_name>")`.
+- Call the `application_database_explorer` tool.
 
 ### 2. Analyze Table Dependencies (Data Graphs)
-- Call `mcp_imaging_linux_data_graphs(application="<app_name>")`.
-- Use `mcp_imaging_linux_data_graph_details(id="<id>", focus="type_graph")`.
-- Use `mcp_imaging_linux_data_graph_details(id="<id>", focus="summary")`.
+- Call the `data_graphs` tool.
+- Use the `data_graph_details` tool (id="<id>", focus="type_graph").
+- Use the `data_graph_details` tool (id="<id>", focus="summary").
 
 ### 3. Identify Data Access Patterns
-- Call `mcp_imaging_linux_object_profiles(application="<app_name>")`.
-- Search for procedures: `mcp_imaging_linux_objects(filters="type:contains:Procedure")`.
+- Call the `object_profiles` tool.
+- Search for procedures: Call the `objects` tool (filters="type:contains:Procedure").
 
 ### 4. Search for Hardcoded SQL
-- Use `mcp_imaging_linux_object_details(focus="code")`.
+- Use the `object_details` tool (focus="code").
 
 ### 5. Find Objects Impacted by Table Changes
-- Call `mcp_imaging_linux_data_graphs_involving_object(application="<app_name>", filters="name:equals:<table_name>")`.
+- Call the `data_graphs_involving_object` tool (filters="name:equals:<table_name>").
 
 ### 6. Generate Database Migration Report
 [Standard report structure follows...]

@@ -5,25 +5,28 @@ description: Analyze application architecture to identify modernization candidat
 
 # Application Modernization Analysis
 
-This skill uses CAST Imaging to visualize dependencies, identify business-logic clusters, and locate complex code that should be refactored or extracted.
+Analyze application architecture using CAST Imaging.
+
+## 🛠 Tool Resolution (MANDATORY)
+This skill uses tools from the CAST Imaging MCP server. Tool names are referenced by **base names**.
+- **The Agent MUST:** Resolve the correct prefix (e.g., `mcp_imaging_linux_` or `your_server_name_`) by checking active MCP tools before execution.
 
 ## Workflow
 
 ### 1. Map High-Level Architecture
-- Call `mcp_imaging_linux_architectural_graph(application="<app_name>", level="component")`.
+- Call the `architectural_graph` tool (level="component").
 
 ### 2. Identify Complexity Hotspots
-- Call `mcp_imaging_linux_objects(application="<app_name>", filters="searchtype:eq:internal")`.
-- Focus on the top 10 most complex objects.
-- Use `mcp_imaging_linux_pathfinder_hierarchy_details(source="<id>", focus="hierarchy", hops=2)`.
+- Call the `objects` tool (filters="searchtype:eq:internal").
+- Use the `pathfinder_hierarchy_details` tool (source="<id>", focus="hierarchy", hops=2).
 
 ### 3. Identify Service Boundaries (Transaction Mapping)
-- Call `mcp_imaging_linux_transactions(application="<app_name>")`.
-- Use `mcp_imaging_linux_transaction_details(id="<id>", focus="summary")`.
-- Use `mcp_imaging_linux_transaction_details(id="<id>", focus="type_graph")`.
+- Call the `transactions` tool.
+- Use the `transaction_details` tool (id="<id>", focus="summary").
+- Use the `transaction_details` tool (id="<id>", focus="type_graph").
 
 ### 4. Locate Dead Code
-- Use `mcp_imaging_linux_object_details(focus="inward")`.
+- Use the `object_details` tool (focus="inward").
 
 ### 5. Generate Modernization Report
 [Standard report structure follows...]
