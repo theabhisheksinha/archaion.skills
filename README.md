@@ -1,4 +1,4 @@
-# CAST Imaging AI Expert Skills (v0.3)
+# CAST Imaging AI Expert Skills (v0.3.0)
 
 This repository contains a suite of specialized AI "Skills" designed to transform general-purpose AI agents into expert Architectural Architects. By leveraging the **CAST Imaging MCP Server**, these skills provide automated workflows for modernization, cloud migration, security auditing, and performance reviews.
 
