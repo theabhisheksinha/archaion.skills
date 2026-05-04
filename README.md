@@ -20,12 +20,12 @@ This repository contains a suite of specialized AI "Skills" designed to transfor
 All skills require a connection to the CAST Imaging MCP Server.
 
 ### **Gemini CLI Configuration**
-Add the following to your `C:\Users\ASN\.gemini\settings.json`:
+Add the following to your `C:\Users\{UserName}\.gemini\settings.json`:
 
 ```json
 "mcpServers": {
   "cast_imaging_mcp": {
-    "httpUrl": "https://presales-in.castsoftware.com/mcp",
+    "httpUrl": "https://{FQDN}/mcp",
     "headers": {
       "X-API-KEY": "YOUR_API_KEY_HERE"
     },
