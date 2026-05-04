@@ -6,6 +6,7 @@ This repository contains a suite of specialized AI "Skills" designed to transfor
 
 | Skill | Focus Area | Primary Use Case |
 | :--- | :--- | :--- |
+| **Architectural Governance** | Compliance | Audit layering, find circular dependencies, and prevent prohibited calls. |
 | **Cloud Migration Maturity** | Cloud Readiness | Identify blockers (hardcoded IPs, local FS) for AWS/Azure/GCP. |
 | **Modernization Analysis** | Refactoring | Monolith decoupling, Mono2Micro service boundary mapping. |
 | **Database Migration Advisor** | Data Layer | Analyze SQL patterns, table dependencies, and stored procedures. |
@@ -38,6 +39,10 @@ Add the following to your `C:\Users\ASN\.gemini\settings.json`:
 ## 🎯 Sample Prompts for Deep Analysis
 
 To get the most out of these skills, use prompts that trigger deep architectural forensics. Here are some examples to get you started:
+
+### 🏛️ Architectural Governance & Compliance
+*   *"Run an **Architectural Governance** audit on 'TicketMonster'. Find any circular dependencies between components."*
+*   *"Verify that the UI layer in 'Shopizer' is not calling the Database layer directly."*
 
 ### ☁️ Cloud Migration & Readiness
 *   *"Run a **Cloud Migration Maturity** review for 'Shopizer'. Focus on the 'Blockers' category for AWS and tell me which components are still using the local file system instead of S3."*
