@@ -6,6 +6,7 @@ This repository contains a suite of specialized AI "Skills" designed to transfor
 
 | Skill | Focus Area | Primary Use Case |
 | :--- | :--- | :--- |
+| **Technical Debt Analyzer** | Code Quality | Identify top 20 high-order violations with evidence and fixes. |
 | **Architectural Governance** | Compliance | Audit layering, find circular dependencies, and prevent prohibited calls. |
 | **Cloud Migration Maturity** | Cloud Readiness | Identify blockers (hardcoded IPs, local FS) for AWS/Azure/GCP. |
 | **Modernization Analysis** | Refactoring | Monolith decoupling, Mono2Micro service boundary mapping. |
@@ -39,6 +40,10 @@ Add the following to your `C:\Users\{UserName}\.gemini\settings.json`:
 ## 🎯 Sample Prompts for Deep Analysis
 
 To get the most out of these skills, use prompts that trigger deep architectural forensics. Here are some examples to get you started:
+
+### 📉 Technical Debt Reduction
+*   *"Run the **Technical Debt Analyzer** on 'Shopizer' and show me the top 20 violations that I should fix first."*
+*   *"Identify the highest order technical debt in 'WebGoat_v3' across Efficiency and Robustness."*
 
 ### 🏛️ Architectural Governance & Compliance
 *   *"Run an **Architectural Governance** audit on 'TicketMonster'. Find any circular dependencies between components."*
