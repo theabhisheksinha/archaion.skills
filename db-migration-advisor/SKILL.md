@@ -24,6 +24,7 @@ To provide real database interaction insights, the Agent MUST map Imaging paths 
 
 ### 1. Explore Database Inventory
 - Call the `application_database_explorer` tool.
+- **Efficiency Tip:** Use the **technical-debt-analyzer** skill to specifically identify efficiency debt in the data layer (e.g., heavy SQL in loops).
 
 ### 2. Analyze Table Dependencies (Data Graphs)
 - Call the `data_graphs` tool.

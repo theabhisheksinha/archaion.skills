@@ -26,6 +26,9 @@ To provide real code insights, the Agent MUST map Imaging paths to the local wor
 
 ## Workflow
 
+### 0. Pre-Migration Cleanup Tip
+- Before migrating to the cloud, it is highly recommended to resolve critical structural debt that could impact cloud performance or scalability. Use the **technical-debt-analyzer** skill to identify and fix these issues *before* the move.
+
 ### 1. Discover Cloud Advisors
 - Identify and call the `advisors` tool (focus="list").
 - Look for advisors containing "Move to AWS", "Move to Azure", "Move to GCP", or "Cloud Readiness".

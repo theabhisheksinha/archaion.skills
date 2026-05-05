@@ -26,9 +26,10 @@ To provide real code insights, the Agent MUST map Imaging paths to the local wor
 ### 1. Map High-Level Architecture
 - Call the `architectural_graph` tool (level="component").
 
-### 2. Identify Complexity Hotspots
+### 2. Identify Complexity & Debt Hotspots
 - Call the `objects` tool (filters="searchtype:eq:internal").
 - Use the `pathfinder_hierarchy_details` tool (source="<id>", focus="hierarchy", hops=2).
+- **Proactive Tip:** Components with high technical debt are the best candidates for refactoring or decommissioning. Use the **technical-debt-analyzer** skill to find the specific code-level debt within these hotspots.
 
 ### 3. Identify Service Boundaries (Transaction Mapping)
 - Call the `transactions` tool.

@@ -22,6 +22,9 @@ To provide real performance profiling, the Agent MUST map Imaging paths to the l
 
 ## Workflow
 
+### 0. Prioritization Tip
+- For a consolidated "Top 20" list of the most critical violations across all ISO categories (Efficiency, Security, Robustness, Maintainability), consider using the **technical-debt-analyzer** skill.
+
 ### 1. High-Level Quality Assessment
 - Call the `application_iso_5055_explorer` tool.
 

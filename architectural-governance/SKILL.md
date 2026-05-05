@@ -33,11 +33,12 @@ Check if specific, unwanted dependencies exist.
 - Call the `objects_relationships` tool, providing the IDs of objects that *should not* communicate (e.g., a specific frontend controller and a core database table).
 - If the tool returns edges between them, flag this as a Governance Violation.
 
-### 3. Audit Structural Flaws (Maintainability)
+### 3. Audit Structural Health & Technical Debt
 Ensure the codebase remains maintainable and adheres to structural standards.
 - Call the `quality_insights` tool (nature="structural-flaws").
 - Focus on violations related to "High Coupling", "Low Cohesion", or "Dead Code".
 - Use the `quality_insight_violations` tool (id="<rule_id>", include_locations=True) to pinpoint exact violations.
+- **Proactive Tip:** For a prioritized list of the most critical structural debt across all categories, use the **technical-debt-analyzer** skill.
 
 ### 4. Review External Dependencies
 Ensure the application is not exposing or relying on unauthorized external services.
